@@ -38,8 +38,8 @@ body, html {
     color: white;
     text-shadow: 2px 2px 4px #000;
     position: absolute; /* Ubicación absoluta dentro de la caja */
-    top: 15%; /* Ajusta para centrar el mensaje entre la tapa y la caja */
-    transform: translate(-50%, 0); /* Centrado horizontal */
+    /*top: 15%; /* Ajusta para centrar el mensaje entre la tapa y la caja */
+    /*transform: translate(-50%, 0); /* Centrado horizontal */
     opacity: 0; /* Comienza invisible */
     animation: showMessage 2s ease-out 1 forwards 4s; /* Aparece después de que la tapa sube */
     z-index: 2; /* Debajo de la tapa pero visible */
