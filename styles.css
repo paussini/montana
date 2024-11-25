@@ -37,6 +37,7 @@ body, html {
     font-size: 1.5em; /* Ajusta el tamaño del texto */
     color: white;
     text-shadow: 2px 2px 4px #000;
+    top: 40%;
     opacity: 0; /* Comienza invisible */
     transform: translateY(50px); /* Comienza abajo, dentro de la caja */
     animation: showMessage 2s ease-out 1 forwards 4s; /* Aparece después de que la tapa sube */
@@ -65,6 +66,7 @@ body, html {
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Oculta el mensaje hasta que aparezca */
+    z-index: 1; /* Caja debajo de la tapa */
   }
   
   /* Tapa */
@@ -79,11 +81,6 @@ body, html {
     animation: liftLid 2s ease-in-out forwards 2s;
  }
 
-  .ribbon {
-    position: absolute;
-    background-color: #fff;
-  }
-  
   .ribbon-vertical {
     position: absolute;
     width: 10px;
@@ -91,6 +88,7 @@ body, html {
     background-color: #fff;
     left: 50%; /* Centra horizontalmente */
     transform: translateX(-50%);
+    z-index: 3;
   }
   
   .ribbon-horizontal {
@@ -100,17 +98,18 @@ body, html {
     background-color: #fff;
     top: 50%; /* Centra verticalmente */
     transform: translateY(-50%);
+    z-index: 3;
   }
   
   /* Animación de la tapa abriéndose */
   @keyframes liftLid {
     0% {
       transform: translateY(0); /* Posición inicial */
-      opacity: 1; /* Completamente visible */
+      
     }
     100% {
       transform: translateY(-120%); /* Se eleva hacia arriba */
-      opacity: 1; /* Desaparece */
+      
     }
   }
   
@@ -122,7 +121,7 @@ body, html {
     }
     100% {
       opacity: 1;
-      transform: translateY(0px);
+      transform: translateY(0);
     }
   }
 
