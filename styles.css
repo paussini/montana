@@ -35,8 +35,8 @@ body, html {
 
   .message {
     font-size: 2.5em;
-    text-shadow: 2% 2% 4% #000;
-    margin-top: 20%;
+    text-shadow: 2px 2px 4px #000;
+    margin-top: 20px;
     opacity: 0; /* Aparece después */
     animation: showMessage 2s ease-in 1 forwards 4s;
   }
@@ -44,8 +44,8 @@ body, html {
   .gift {
     position: relative;
     margin: 0 auto;
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,25 +53,22 @@ body, html {
   
   /* Caja */
   .box {
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 150px;
     background-color: #ff4081;
-    border: 3% solid #fff;
+    border: 3px solid #fff;
     position: absolute;
     bottom: 0;
-    display: -webkit-flex; /* Safari */
-    display: -ms-flexbox;  /* IE */
-    display: flex;         /* Navegadores modernos */
   }
   
   /* Tapa */
   .lid {
-    width: 100%;
-    height: auto;
+    width: 160px;
+    height: 30px;
     background-color: #ff80ab;
-    border: 3% solid #fff;
+    border: 3px solid #fff;
     position: absolute;
-    top: -10%;
+    top: -10px;
     z-index: 3;
     transform-origin: center bottom;
     animation: liftLid 2s ease-in-out 1 forwards 2s;
@@ -84,14 +81,14 @@ body, html {
   
   .ribbon-vertical {
     position: absolute;
-    width: 100%;
-    height: auto;
+    width: 10px;
+    height: 150px;
   }
   
   .ribbon-horizontal {
     position: absolute;
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 10px;
   }
   
   /* Animación de la tapa abriéndose */
@@ -101,7 +98,7 @@ body, html {
       opacity: 1; /* Completamente visible */
     }
     100% {
-      transform: translateY(-120%); /* Se eleva hacia arriba */
+      transform: translateY(-120px); /* Se eleva hacia arriba */
       opacity: 1; /* Desaparece */
     }
   }
@@ -110,11 +107,11 @@ body, html {
   @keyframes showMessage {
     0% {
       opacity: 0;
-      transform: translateY(0);
+      transform: translateY(0px);
     }
     100% {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0px);
     }
   }
 
@@ -125,7 +122,7 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     z-index: -1; /* Detrás del contenido principal */
     background: transparent; /* Asegúrate de que el fondo sea visible */
  }
@@ -149,34 +146,5 @@ body, html {
       transform: scale(3);
     }
   }*/
-
-  h1 {
-    font-size: 2rem; /* Cambia automáticamente según el tamaño de la pantalla */
-  }
-
-  @media (max-width: 768px) {
-    .gift {
-      width: 50%; /* Más pequeño en pantallas pequeñas */
-    }
-  
-    .message {
-      font-size: 5vw; /* Ajusta el tamaño del texto */
-    }
-  
-    .background img {
-      max-width: 80%; /* Haz que la imagen sea más pequeña */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .gift {
-      width: 60%;
-    }
-  
-    .message {
-      font-size: 6vw;
-    }
-  }
-  
   
   
