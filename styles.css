@@ -1,0 +1,150 @@
+/* Fondo principal */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Fondo negro */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .background img {
+    max-width: 100%; /* La imagen no supera el ancho de la pantalla */
+    max-height: 100%; /* La imagen no supera el alto de la pantalla */
+  }
+  
+  
+  .content {
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .message {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px #000;
+    margin-top: 20px;
+    opacity: 0; /* Aparece después */
+    animation: showMessage 2s ease-in 1 forwards 4s;
+  }
+  
+  .gift {
+    position: relative;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Caja */
+  .box {
+    width: 150px;
+    height: 150px;
+    background-color: #ff4081;
+    border: 3px solid #fff;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  /* Tapa */
+  .lid {
+    width: 160px;
+    height: 30px;
+    background-color: #ff80ab;
+    border: 3px solid #fff;
+    position: absolute;
+    top: -10px;
+    z-index: 3;
+    transform-origin: center bottom;
+    animation: liftLid 2s ease-in-out 1 forwards 2s;
+  }
+
+  .ribbon {
+    position: absolute;
+    background-color: #fff;
+  }
+  
+  .ribbon-vertical {
+    position: absolute;
+    width: 10px;
+    height: 150px;
+  }
+  
+  .ribbon-horizontal {
+    position: absolute;
+    width: 150px;
+    height: 10px;
+  }
+  
+  /* Animación de la tapa abriéndose */
+  @keyframes liftLid {
+    0% {
+      transform: translateY(0); /* Posición inicial */
+      opacity: 1; /* Completamente visible */
+    }
+    100% {
+      transform: translateY(-120px); /* Se eleva hacia arriba */
+      opacity: 1; /* Desaparece */
+    }
+  }
+  
+  /* Animación del mensaje */
+  @keyframes showMessage {
+    0% {
+      opacity: 0;
+      transform: translateY(-250px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-250px);
+    }
+  }
+
+  /* Fuegos artificiales */
+
+ #fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Detrás del contenido principal */
+    background: transparent; /* Asegúrate de que el fondo sea visible */
+ }
+/*.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ff0, #f00);
+    border-radius: 50%;
+    animation: explode 2s ease-out infinite;
+    opacity: 0;
+  }
+  
+  @keyframes explode {
+    0% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(3);
+    }
+  }*/
+  
+  
