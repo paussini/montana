@@ -118,11 +118,11 @@ body, html {
   @keyframes showMessage {
     0% {
       opacity: 0; /* Invisible al inicio */
-      transform: translate(-50%, 20px); /* Comienza abajo */
+      transform: translateY(0); /* Posición inicial */
     }
     100% {
       opacity: 1; /* Se hace visible */
-      transform: translate(-120%, 0); /* Llega al centro */
+      transform: translateY(-100%); /* Posición inicial */
     }
   }
 
