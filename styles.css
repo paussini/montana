@@ -153,5 +153,30 @@ body, html {
   h1 {
     font-size: 2rem; /* Cambia automáticamente según el tamaño de la pantalla */
   }
+
+  @media (max-width: 768px) {
+    .gift {
+      width: 50%; /* Más pequeño en pantallas pequeñas */
+    }
+  
+    .message {
+      font-size: 5vw; /* Ajusta el tamaño del texto */
+    }
+  
+    .background img {
+      max-width: 80%; /* Haz que la imagen sea más pequeña */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gift {
+      width: 60%;
+    }
+  
+    .message {
+      font-size: 6vw;
+    }
+  }
+  
   
   
