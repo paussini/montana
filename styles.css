@@ -44,35 +44,34 @@ body, html {
   .gift {
     position: relative;
     margin: 0 auto;
-    width: 150px;
-    height: 150px;
+    width: 150px; /* Tamaño coherente */
+    height: 200px; /* Suficiente espacio para la tapa y la caja */
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Coloca tapa y caja en columnas */
+    justify-content: flex-end; /* La caja estará abajo */
     align-items: center;
   }
   
   /* Caja */
   .box {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 70%; /* Ajusta el tamaño para que sea coherente con el regalo */
     background-color: #ff4081;
     border: 3px solid #fff;
-    position: absolute;
-    bottom: 0;
+    position: relative; /* Posición relativa para la tapa */
   }
   
   /* Tapa */
   .lid {
-    width: 160px;
-    height: 30px;
+    width: 100%; /* Asegúrate de que la tapa coincida con el ancho de la caja */
+    height: 30%; /* Altura proporcional */
     background-color: #ff80ab;
     border: 3px solid #fff;
     position: absolute;
-    top: -10px;
-    z-index: 3;
-    transform-origin: center bottom;
-    animation: liftLid 2s ease-in-out 1 forwards 2s;
-  }
+    top: -20%; /* Ajusta la posición para que la tapa esté ligeramente por encima */
+    z-index: 2;
+    animation: liftLid 2s ease-in-out forwards 2s;
+ }
 
   .ribbon {
     position: absolute;
@@ -82,13 +81,19 @@ body, html {
   .ribbon-vertical {
     position: absolute;
     width: 10px;
-    height: 150px;
+    height: 100%; /* Cubre toda la altura del regalo */
+    background-color: #fff;
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%);
   }
   
   .ribbon-horizontal {
     position: absolute;
-    width: 150px;
+    width: 100%; /* Cubre todo el ancho del regalo */
     height: 10px;
+    background-color: #fff;
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
   }
   
   /* Animación de la tapa abriéndose */
@@ -98,7 +103,7 @@ body, html {
       opacity: 1; /* Completamente visible */
     }
     100% {
-      transform: translateY(-120px); /* Se eleva hacia arriba */
+      transform: translateY(-120%); /* Se eleva hacia arriba */
       opacity: 1; /* Desaparece */
     }
   }
