@@ -122,7 +122,7 @@ body, html {
     }
     100% {
       opacity: 1; /* Se hace visible */
-      transform: translate(-50%, 0); /* Llega al centro */
+      transform: translate(-120%, 0); /* Llega al centro */
     }
   }
 
