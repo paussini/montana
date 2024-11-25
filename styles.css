@@ -37,15 +37,14 @@ body, html {
     font-size: 1.5em; /* Ajusta el tamaño del texto */
     color: white;
     text-shadow: 2px 2px 4px #000;
-    position: absolute; /* Ubicación relativa a la caja */
-    top: 30%;
+    position: absolute; /* Ubicación absoluta dentro de la caja */
+    top: 15%; /* Ajusta para centrar el mensaje entre la tapa y la caja */
     left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, 0); /* Centrado horizontal */
     opacity: 0; /* Comienza invisible */
-    transform: translateY(50px); /* Comienza abajo, dentro de la caja */
     animation: showMessage 2s ease-out 1 forwards 4s; /* Aparece después de que la tapa sube */
-    z-index: 1; /* Debajo de la tapa pero visible dentro de la caja */
+    z-index: 2; /* Debajo de la tapa pero visible */
   }
-  
   .gift {
     position: relative;
     margin: 0 auto;
@@ -119,7 +118,7 @@ body, html {
   @keyframes showMessage {
     0% {
       opacity: 0; /* Invisible al inicio */
-      transform: translate(-50%, 50px); /* Comienza abajo */
+      transform: translate(-50%, 20px); /* Comienza abajo */
     }
     100% {
       opacity: 1; /* Se hace visible */
