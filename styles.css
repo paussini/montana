@@ -35,8 +35,8 @@ body, html {
 
   .message {
     font-size: 2.5em;
-    text-shadow: 2px 2px 4px #000;
-    margin-top: 20px;
+    text-shadow: 2% 2% 4% #000;
+    margin-top: 20%;
     opacity: 0; /* Aparece después */
     animation: showMessage 2s ease-in 1 forwards 4s;
   }
@@ -44,8 +44,8 @@ body, html {
   .gift {
     position: relative;
     margin: 0 auto;
-    width: 150px;
-    height: 150px;
+    width: 150%;
+    height: 150%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,22 +53,25 @@ body, html {
   
   /* Caja */
   .box {
-    width: 150px;
-    height: 150px;
+    width: 150%;
+    height: 150%;
     background-color: #ff4081;
-    border: 3px solid #fff;
+    border: 3% solid #fff;
     position: absolute;
     bottom: 0;
+    display: -webkit-flex; /* Safari */
+    display: -ms-flexbox;  /* IE */
+    display: flex;         /* Navegadores modernos */
   }
   
   /* Tapa */
   .lid {
-    width: 160px;
-    height: 30px;
+    width: 160%;
+    height: 30%;
     background-color: #ff80ab;
-    border: 3px solid #fff;
+    border: 3% solid #fff;
     position: absolute;
-    top: -10px;
+    top: -10%;
     z-index: 3;
     transform-origin: center bottom;
     animation: liftLid 2s ease-in-out 1 forwards 2s;
@@ -81,14 +84,14 @@ body, html {
   
   .ribbon-vertical {
     position: absolute;
-    width: 10px;
-    height: 150px;
+    width: 10%;
+    height: 150%;
   }
   
   .ribbon-horizontal {
     position: absolute;
-    width: 150px;
-    height: 10px;
+    width: 150%;
+    height: 10%;
   }
   
   /* Animación de la tapa abriéndose */
@@ -98,7 +101,7 @@ body, html {
       opacity: 1; /* Completamente visible */
     }
     100% {
-      transform: translateY(-120px); /* Se eleva hacia arriba */
+      transform: translateY(-120%); /* Se eleva hacia arriba */
       opacity: 1; /* Desaparece */
     }
   }
@@ -107,11 +110,11 @@ body, html {
   @keyframes showMessage {
     0% {
       opacity: 0;
-      transform: translateY(-250px);
+      transform: translateY(0);
     }
     100% {
       opacity: 1;
-      transform: translateY(-250px);
+      transform: translateY(0);
     }
   }
 
@@ -146,5 +149,9 @@ body, html {
       transform: scale(3);
     }
   }*/
+
+  h1 {
+    font-size: 2rem; /* Cambia automáticamente según el tamaño de la pantalla */
+  }
   
   
