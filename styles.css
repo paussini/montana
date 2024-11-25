@@ -121,7 +121,7 @@ body, html {
     }
     100% {
       opacity: 1; /* Se hace visible */
-      transform: translateY(-120%); /* Posición inicial */
+      transform: translateY(-150%); /* Posición inicial */
     }
   }
 
