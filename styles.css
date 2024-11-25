@@ -34,11 +34,13 @@ body, html {
   }
 
   .message {
-    font-size: 2.5em;
+    font-size: 1.5em; /* Ajusta el tamaño del texto */
+    color: white;
     text-shadow: 2px 2px 4px #000;
-    margin-top: 20px;
-    opacity: 0; /* Aparece después */
-    animation: showMessage 2s ease-in 1 forwards 4s;
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(50px); /* Comienza abajo, dentro de la caja */
+    animation: showMessage 2s ease-out 1 forwards 4s; /* Aparece después de que la tapa sube */
+    z-index: 1; /* Debajo de la tapa pero visible dentro de la caja */
   }
   
   .gift {
@@ -59,6 +61,10 @@ body, html {
     background-color: #ff4081;
     border: 3px solid #fff;
     position: relative; /* Posición relativa para la tapa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta el mensaje hasta que aparezca */
   }
   
   /* Tapa */
@@ -68,7 +74,7 @@ body, html {
     background-color: #ff80ab;
     border: 3px solid #fff;
     position: absolute;
-    top: -20%; /* Ajusta la posición para que la tapa esté ligeramente por encima */
+    top: 0; /* Ajusta la posición para que la tapa esté ligeramente por encima */
     z-index: 2;
     animation: liftLid 2s ease-in-out forwards 2s;
  }
@@ -112,7 +118,7 @@ body, html {
   @keyframes showMessage {
     0% {
       opacity: 0;
-      transform: translateY(0px);
+      transform: translateY(50px);
     }
     100% {
       opacity: 1;
