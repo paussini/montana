@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Feliz Cumpleaños!</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <audio id="birthdaySong" autoplay loop>
-    <source src="assets/PaulaMontana.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio.
-  </audio>
+    <audio id="birthdaySong" autoplay loop>
+        <source src="assets/PaulaMontana.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
 
-  <div class="background">
-    <img src="assets/PaulaMontana.JPG" alt="Imagen de fondo">
-  </div>
-  <div class="content">
-    <div class="gift">
-        <div class="lid"></div> <!-- Tapa del regalo -->
-        <div class="box"> <!-- Caja del regalo -->
-            <div class="ribbon ribbon-vertical"></div> <!-- Lazo vertical -->
-            <div class="ribbon ribbon-horizontal"></div> <!-- Lazo horizontal -->
-        </div>  
-        <h1 class="message">🎉 ¡Feliz Cumpleaños! 🎂</h1>
+    <div class="background">
+        <img src="assets/PaulaMontana.JPG" alt="Imagen de fondo">
     </div>
-    <div id="fireworks"></div>
-    <div class="menu-icon" onclick="toggleMenu()">
-        ☰
+    <div class="content">
+        <div class="gift">
+            <div class="lid"></div>
+            <div class="box">
+                <div class="ribbon ribbon-vertical"></div>
+                <div class="ribbon ribbon-horizontal"></div>
+            </div>  
+            <h1 class="message">🎉 ¡Feliz Cumpleaños! 🎂</h1>
+        </div>
+        <div id="fireworks"></div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="menu">
+            <button class="close-btn" onclick="toggleMenu()">X</button>
+            <ul>
+                <li onclick="navigateTo('Frases Célebres')">Frases Célebres</li>
+                <li onclick="navigateTo('Galería de imágenes')">Galería de Imágenes</li>
+                <li onclick="navigateTo('Entradas')">Entradas</li>
+            </ul>
+        </div>
     </div>
-    <div class="menu" id="menu">
-      <button class="close-btn" onclick="toggleMenu()">X</button>
-      <ul>
-        <li onclick="navigateTo('Frases Célebres')">Frases Célebres</li>
-        <li onclick="navigateTo('Galería de imágenes')">Galería de Imágenes</li>
-        <li onclick="navigateTo('Entradas')">Entradas</li>
-      </ul>
-    </div>
-  </div>
 
-  <!-- Sección de Frases Célebres -->
-  <section id="frases-celebres" style="display: none;">
-    <h2>Frases Célebres</h2>
-    <div class="galeria">
-      <img src="assets/foto1.jpg" alt="" >
-      <img src="assets/foto2.jpg" alt="" >
-      <img src="assets/foto3.jpg" alt="" >
-      <img src="assets/foto4.jpg" alt="" >
-      <img src="assets/foto5.jpg" alt="" >
-    </div>
-  </section>
+    <main>
+        <!-- Sección de Frases Célebres -->
+        <section id="frases-celebres" style="display: none;">
+            <h2>Frases Célebres</h2>
+            <div class="galeria">
+                <img src="assets/foto1.jpg" alt="">
+                <img src="assets/foto2.jpg" alt="">
+                <img src="assets/foto3.jpg" alt="">
+                <img src="assets/foto4.jpg" alt="">
+                <img src="assets/foto5.jpg" alt="">
+            </div>
+        </section>
+    </main>
 
-  <script src="assets/particles.min.js"></script>
-  <script src="script.js"></script>
+    <script src="assets/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
