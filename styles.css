@@ -276,5 +276,141 @@ body, html {
     color: black;
 }
   
+  /* Estilo para la sección de Frases Célebres */
+  #frases-celebres {
+    display: none; /* Oculta inicialmente */
+    position: fixed; /* Fija la sección para que ocupe toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #222, #111); /* Fondo degradado */
+    color: white;
+    text-align: center;
+    z-index: 100; /* Asegura que esté sobre el resto del contenido */
+    overflow-y: auto; /* Permite desplazamiento si es necesario */
+  }
+  
+  #frases-celebres h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ff4081;
+  }
+  
+  /* Contenedor principal de la galería */
+  .gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  .gallery {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item {
+    flex: 0 0 220px; /* Cada ítem tiene un ancho fijo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .caption {
+    padding: 10px;
+    font-size: 0.9em;
+    color: #333;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+  
+  .nav-button.left {
+    left: 10px;
+  }
+  
+  .nav-button.right {
+    right: 10px;
+  }
+  
+  .nav-button:hover {
+    background: #ff4081;
+    color: #fff;
+  }
+  
+
+  .fullscreen-container {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .fullscreen-content {
+    position: relative;
+    text-align: center;
+  }
+  
+  #fullscreen-image {
+    max-width: 90%;
+    max-height: 70%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  }
+  
+  #fullscreen-caption {
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
   
   
