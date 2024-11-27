@@ -25,6 +25,18 @@
         <h1 class="message">🎉 ¡Feliz Cumpleaños! 🎂</h1>
     </div>
     <div id="fireworks"></div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        ☰
+    </div>
+    <div class="menu" id="menu">
+            <button class="close-btn" onclick="toggleMenu()">X</button>
+            <ul>
+                <li onclick="navigateTo('Frases Célebres')">Frases Célebres</li>
+                <li onclick="navigateTo('Galería de imágenes')">Galería de Imágenes</li>
+                <li onclick="navigateTo('Entradas')">Entradas</li>
+            </ul>
+    </div>
+      
   </div>
   <script src="assets/particles.min.js"></script>
   <script src="script.js"></script>
