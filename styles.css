@@ -299,7 +299,8 @@ body, html {
   }
   
   /* Contenedor principal de la galería */
-  .gallery-container {
+  /* Estilos principales */
+.gallery-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -310,17 +311,17 @@ body, html {
     padding: 20px;
     position: relative;
     overflow: hidden;
+    width: 90%; /* Ajusta dinámicamente el ancho */
   }
-  
   
   .gallery {
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Espacio entre elementos */
     transition: transform 0.3s ease;
   }
   
   .gallery-item {
-    flex: 0 0 220px; /* Cada ítem tiene un ancho fijo */
+    flex: 0 0 200px; /* Ancho fijo por ítem en escritorio */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -343,6 +344,7 @@ body, html {
     color: #333;
   }
   
+  /* Botones de navegación */
   .nav-button {
     position: absolute;
     top: 50%;
@@ -363,6 +365,31 @@ body, html {
   .nav-button.right {
     right: 10px;
   }
+  
+  /* Media Query para Pantallas Pequeñas */
+  @media (max-width: 768px) {
+    .gallery-container {
+      width: 100%; /* Asegúrate de usar todo el ancho disponible */
+      padding: 10px; /* Reduce el padding para móviles */
+    }
+  
+    .gallery-item {
+      flex: 0 0 calc(100% - 20px); /* Cada ítem ocupa el 100% del ancho con espacio */
+    }
+  
+    .gallery-item img {
+      height: auto; /* Ajusta la altura automáticamente para imágenes */
+    }
+  
+    .caption {
+      font-size: 1em; /* Ajusta el tamaño del texto */
+    }
+  
+    .nav-button {
+      padding: 8px; /* Botones más pequeños */
+    }
+  }
+  
   
   .nav-button:hover {
     background: #ff4081;

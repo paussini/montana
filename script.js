@@ -36,36 +36,36 @@ particlesJS.load('fireworks', 'assets/particles.json', function () {
   let scrollAmount = 0;
   
   function updateGalleryWidth() {
-    const totalItems = gallery.children.length; // Número total de elementos
-    const visibleWidth = galleryContainer.offsetWidth; // Ancho visible de la galería
-    const itemWidth = 220; // Ancho de cada ítem más el gap
-    const totalWidth = totalItems * itemWidth; // Ancho total de la galería
+    const itemWidth = galleryContainer.offsetWidth < 768 ? galleryContainer.offsetWidth : 220; // Cambia dinámicamente el tamaño
+    const totalItems = gallery.children.length;
+    const totalWidth = totalItems * itemWidth;
   
-    gallery.style.width = `${totalWidth}px`; // Ajusta el ancho de la galería
+    gallery.style.width = `${totalWidth}px`; // Ajusta la galería al tamaño total
   
-    // Muestra u oculta los botones de navegación según el desplazamiento
+    // Actualiza los botones
     leftButton.style.display = scrollAmount > 0 ? 'block' : 'none';
-    rightButton.style.display = scrollAmount < totalWidth - visibleWidth ? 'block' : 'none';
+    rightButton.style.display =
+      scrollAmount < totalWidth - galleryContainer.offsetWidth ? 'block' : 'none';
   }
   
   leftButton.addEventListener('click', () => {
-    scrollAmount -= 220; // Ajusta según el ancho de cada ítem
+    scrollAmount -= galleryContainer.offsetWidth < 768 ? galleryContainer.offsetWidth : 220;
     if (scrollAmount < 0) scrollAmount = 0;
     gallery.style.transform = `translateX(-${scrollAmount}px)`;
     updateGalleryWidth();
   });
   
   rightButton.addEventListener('click', () => {
-    scrollAmount += 220; // Ajusta según el ancho de cada ítem
+    scrollAmount += galleryContainer.offsetWidth < 768 ? galleryContainer.offsetWidth : 220;
     const maxScroll = gallery.scrollWidth - galleryContainer.offsetWidth;
     if (scrollAmount > maxScroll) scrollAmount = maxScroll;
     gallery.style.transform = `translateX(-${scrollAmount}px)`;
     updateGalleryWidth();
   });
   
-  // Ajustar el ancho inicial y actualizar en caso de resize
   window.addEventListener('load', updateGalleryWidth);
   window.addEventListener('resize', updateGalleryWidth);
+  
   
   
   function showFullscreen(imageSrc, captionText) {
