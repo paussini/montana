@@ -36,27 +36,29 @@ particlesJS.load('fireworks', 'assets/particles.json', function () {
   let scrollAmount = 0;
   
   function updateGalleryWidth() {
-    const itemWidth = galleryContainer.offsetWidth < 768 ? galleryContainer.offsetWidth : 220; // Cambia dinámicamente el tamaño
+    const itemWidth = galleryContainer.offsetWidth / 5; // Ajusta el ancho dinámico de los ítems según la pantalla
     const totalItems = gallery.children.length;
     const totalWidth = totalItems * itemWidth;
   
     gallery.style.width = `${totalWidth}px`; // Ajusta la galería al tamaño total
   
-    // Actualiza los botones
+    // Actualiza los botones de navegación
     leftButton.style.display = scrollAmount > 0 ? 'block' : 'none';
     rightButton.style.display =
       scrollAmount < totalWidth - galleryContainer.offsetWidth ? 'block' : 'none';
   }
   
   leftButton.addEventListener('click', () => {
-    scrollAmount -= galleryContainer.offsetWidth < 768 ? galleryContainer.offsetWidth : 220;
+    const itemWidth = galleryContainer.offsetWidth / 5;
+    scrollAmount -= itemWidth;
     if (scrollAmount < 0) scrollAmount = 0;
     gallery.style.transform = `translateX(-${scrollAmount}px)`;
     updateGalleryWidth();
   });
   
   rightButton.addEventListener('click', () => {
-    scrollAmount += galleryContainer.offsetWidth < 768 ? galleryContainer.offsetWidth : 220;
+    const itemWidth = galleryContainer.offsetWidth / 5;
+    scrollAmount += itemWidth;
     const maxScroll = gallery.scrollWidth - galleryContainer.offsetWidth;
     if (scrollAmount > maxScroll) scrollAmount = maxScroll;
     gallery.style.transform = `translateX(-${scrollAmount}px)`;
@@ -65,6 +67,7 @@ particlesJS.load('fireworks', 'assets/particles.json', function () {
   
   window.addEventListener('load', updateGalleryWidth);
   window.addEventListener('resize', updateGalleryWidth);
+  
   
   
   

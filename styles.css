@@ -300,6 +300,7 @@ body, html {
   
   /* Contenedor principal de la galería */
   /* Estilos principales */
+/* Contenedor principal de la galería */
 .gallery-container {
     display: flex;
     align-items: center;
@@ -311,17 +312,22 @@ body, html {
     padding: 20px;
     position: relative;
     overflow: hidden;
-    width: 90%; /* Ajusta dinámicamente el ancho */
+    width: 90%; /* Se adapta al tamaño de la pantalla */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
   }
   
+  /* Galería deslizante */
   .gallery {
     display: flex;
-    gap: 20px; /* Espacio entre elementos */
+    gap: 20px;
     transition: transform 0.3s ease;
+    scroll-behavior: smooth; /* Habilita el desplazamiento suave */
   }
   
+  /* Elemento individual de la galería */
   .gallery-item {
-    flex: 0 0 200px; /* Ancho fijo por ítem en escritorio */
+    flex: 0 0 calc(20% - 20px); /* 20% del ancho del contenedor, menos el espacio entre elementos */
+    max-width: 200px; /* Ancho máximo en pantallas grandes */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -366,19 +372,31 @@ body, html {
     right: 10px;
   }
   
-  /* Media Query para Pantallas Pequeñas */
+  .nav-button:hover {
+    background: #ff4081;
+    color: #fff;
+  }
+  
+  /* Media Query para Pantallas Medianas (Tablets) */
+  @media (max-width: 1024px) {
+    .gallery-item {
+      flex: 0 0 calc(33.33% - 20px); /* 3 elementos por fila */
+    }
+  }
+  
+  /* Media Query para Pantallas Pequeñas (Móviles) */
   @media (max-width: 768px) {
     .gallery-container {
-      width: 100%; /* Asegúrate de usar todo el ancho disponible */
-      padding: 10px; /* Reduce el padding para móviles */
+      padding: 10px;
     }
   
     .gallery-item {
-      flex: 0 0 calc(100% - 20px); /* Cada ítem ocupa el 100% del ancho con espacio */
+      flex: 0 0 calc(50% - 20px); /* 2 elementos por fila */
+      max-width: 100%; /* Ocupa todo el ancho disponible */
     }
   
     .gallery-item img {
-      height: auto; /* Ajusta la altura automáticamente para imágenes */
+      height: auto; /* Ajusta la altura automáticamente */
     }
   
     .caption {
@@ -387,6 +405,13 @@ body, html {
   
     .nav-button {
       padding: 8px; /* Botones más pequeños */
+    }
+  }
+  
+  /* Media Query para Pantallas Muy Pequeñas */
+  @media (max-width: 480px) {
+    .gallery-item {
+      flex: 0 0 100%; /* 1 elemento por fila */
     }
   }
   
