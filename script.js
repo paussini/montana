@@ -87,18 +87,18 @@ particlesJS.load('fireworks', 'assets/particles.json', function () {
   }
   
   // Selecciona el contenedor de la sección Frases Célebres
-const frasesCelebresSection = document.getElementById('frases-celebres');
+// const frasesCelebresSection = document.getElementById('frases-celebres');
 
-// Selecciona todas las imágenes dentro de la galería
-const galeriaImages = document.querySelectorAll('#frases-celebres .galeria img');
+// // Selecciona todas las imágenes dentro de la galería
+// const galeriaImages = document.querySelectorAll('#frases-celebres .galeria img');
 
-// Añade un evento de clic a cada imagen
-galeriaImages.forEach((img) => {
-    img.addEventListener('click', () => {
-        // Obtén la ruta de la imagen para el fondo desde el atributo data-background
-        const backgroundImage = img.getAttribute('data-background');
+// // Añade un evento de clic a cada imagen
+// galeriaImages.forEach((img) => {
+//     img.addEventListener('click', () => {
+//         // Obtén la ruta de la imagen para el fondo desde el atributo data-background
+//         const backgroundImage = img.getAttribute('data-background');
         
-        // Cambia el fondo de la sección Frases Célebres
-        frasesCelebresSection.style.backgroundImage = `url(${backgroundImage})`;
-    });
-});
+//         // Cambia el fondo de la sección Frases Célebres
+//         frasesCelebresSection.style.backgroundImage = `url(${backgroundImage})`;
+//     });
+// });
