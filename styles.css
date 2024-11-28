@@ -402,14 +402,18 @@ body, html {
 
 #frases-celebres .close-section {
     position: absolute;
-    top: 10px; /* Ajusta la posición superior del botón */
-    right: 20px; /* Ajusta la posición derecha del botón */
+    top: 40px; /* Ajusta la posición superior del botón */
+    right: 50px; /* Ajusta la posición derecha del botón */
     background: none;
     border: none;
     color: white;
     font-size: 2rem;
     cursor: pointer;
     z-index: 10;
+}
+
+#frases-celebres .close-section:hover {
+    color: #ff4081; /* Cambia de color al pasar el ratón */
 }
 
 /* Media Queries */
