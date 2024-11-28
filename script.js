@@ -26,79 +26,47 @@ particlesJS.load('fireworks', 'assets/particles.json', function () {
     toggleMenu();
   }
 
-  //GALERIA
+//   //FRASES
   
-  const gallery = document.querySelector('.gallery');
-  const galleryContainer = document.querySelector('.gallery-container');
-  const leftButton = document.querySelector('.nav-button.left');
-  const rightButton = document.querySelector('.nav-button.right');
-  
-  let scrollAmount = 0;
-  
-  function updateGalleryWidth() {
-    const itemWidth = galleryContainer.offsetWidth / 5; // Ajusta el ancho dinámico de los ítems según la pantalla
-    const totalItems = gallery.children.length;
-    const totalWidth = totalItems * itemWidth;
-  
-    gallery.style.width = `${totalWidth}px`; // Ajusta la galería al tamaño total
-  
-    // Actualiza los botones de navegación
-    leftButton.style.display = scrollAmount > 0 ? 'block' : 'none';
-    rightButton.style.display =
-      scrollAmount < totalWidth - galleryContainer.offsetWidth ? 'block' : 'none';
-  }
-  
-  leftButton.addEventListener('click', () => {
-    const itemWidth = galleryContainer.offsetWidth / 5;
-    scrollAmount -= itemWidth;
-    if (scrollAmount < 0) scrollAmount = 0;
-    gallery.style.transform = `translateX(-${scrollAmount}px)`;
-    updateGalleryWidth();
-  });
-  
-  rightButton.addEventListener('click', () => {
-    const itemWidth = galleryContainer.offsetWidth / 5;
-    scrollAmount += itemWidth;
-    const maxScroll = gallery.scrollWidth - galleryContainer.offsetWidth;
-    if (scrollAmount > maxScroll) scrollAmount = maxScroll;
-    gallery.style.transform = `translateX(-${scrollAmount}px)`;
-    updateGalleryWidth();
-  });
-  
-  window.addEventListener('load', updateGalleryWidth);
-  window.addEventListener('resize', updateGalleryWidth);
-  
-  
-  
-  
-  function showFullscreen(imageSrc, captionText) {
-    const fullscreenContainer = document.getElementById('fullscreen-container');
-    const fullscreenImage = document.getElementById('fullscreen-image');
-    const fullscreenCaption = document.getElementById('fullscreen-caption');
-  
-    fullscreenImage.src = imageSrc;
-    fullscreenCaption.textContent = captionText;
-    fullscreenContainer.style.display = 'flex';
-  }
-  
-  function closeFullscreen() {
-    const fullscreenContainer = document.getElementById('fullscreen-container');
-    fullscreenContainer.style.display = 'none';
-  }
-  
-  // Selecciona el contenedor de la sección Frases Célebres
-// const frasesCelebresSection = document.getElementById('frases-celebres');
+// Función para mostrar la imagen ampliada con la frase célebre
+function showOverlay(imageSrc, captionText) {
+    const overlay = document.getElementById('overlay');
+    const overlayImage = document.getElementById('overlay-image');
+    const overlayCaption = document.getElementById('overlay-caption');
 
-// // Selecciona todas las imágenes dentro de la galería
-// const galeriaImages = document.querySelectorAll('#frases-celebres .galeria img');
+    // Configura la imagen y la frase
+    overlayImage.src = imageSrc;
+    overlayCaption.textContent = captionText;
 
-// // Añade un evento de clic a cada imagen
-// galeriaImages.forEach((img) => {
-//     img.addEventListener('click', () => {
-//         // Obtén la ruta de la imagen para el fondo desde el atributo data-background
-//         const backgroundImage = img.getAttribute('data-background');
-        
-//         // Cambia el fondo de la sección Frases Célebres
-//         frasesCelebresSection.style.backgroundImage = `url(${backgroundImage})`;
-//     });
-// });
+    // Muestra el overlay
+    overlay.style.display = 'flex';
+}
+
+// Función para cerrar el overlay
+function closeOverlay() {
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
+}
+
+// Añade eventos a las imágenes de la galería
+const galleryItems = document.querySelectorAll('.gallery-item img');
+galleryItems.forEach((img) => {
+    const fraseText = img.parentElement.getAttribute('data-frase');
+    img.addEventListener('click', () => {
+        showOverlay(img.src, fraseText);
+    });
+});
+
+
+function closeFrasesCelebres() {
+    const frasesCelebresSection = document.getElementById('frases-celebres');
+    frasesCelebresSection.style.display = 'none';
+
+    // Si tienes una página principal o menú inicial
+    const mainMenu = document.querySelector('.menu');
+    if (mainMenu) {
+        mainMenu.style.display = 'block'; // Muestra el menú principal
+    }
+}
+
+

@@ -39,18 +39,40 @@
     <main>
         <!-- Sección de Frases Célebres -->
         <section id="frases-celebres" style="display: none;">
-            <h2>Frases Célebres</h2>
-            <div class="galeria">
-              <img src="assets/foto1.jpg" alt="" data-background="assets/foto1.jpg">
-              <img src="assets/foto2.jpg" alt="" data-background="assets/foto2.jpg">
-              <img src="assets/foto3.jpg" alt="" data-background="assets/foto3.jpg">
-              <img src="assets/foto4.jpg" alt="" data-background="assets/foto4.jpg">
-              <img src="assets/foto5.jpg" alt="" data-background="assets/foto5.jpg">
-            </div>
-        </section>
+          <button class="close-section" onclick="closeFrasesCelebres()">X</button>
+          <h2>Frases Célebres</h2>
+          <div class="galeria">
+              <div class="gallery-item" data-frase="¡La vida es lo que haces de ella!">
+                  <img src="assets/foto1.jpg" alt="Frase1">
+                  <p class="frase"></p>
+              </div>
+              <div class="gallery-item" data-frase="¡Siempre sé tú mismo!">
+                  <img src="assets/foto2.jpg" alt="Frase2">
+                  <p class="frase"></p>
+              </div>
+              <div class="gallery-item" data-frase="¡La amistad lo es todo!">
+                  <img src="assets/foto3.jpg" alt="Frase3">
+                  <p class="frase"></p>
+              </div>
+              <div class="gallery-item" data-frase="¡Sigue tus sueños!">
+                  <img src="assets/foto4.jpg" alt="Frase4">
+                  <p class="frase"></p>
+              </div>
+              <div class="gallery-item" data-frase="¡Todo es posible si lo intentas!">
+                  <img src="assets/foto5.jpg" alt="Frase5">
+                  <p class="frase"></p>
+              </div>
+          </div>
+      </section>
+      
     </main>
 
     <script src="assets/particles.min.js"></script>
     <script src="script.js"></script>
+    <div id="overlay" class="overlay" style="display: none;">
+      <button class="close-overlay" onclick="closeOverlay()">X</button>
+      <img id="overlay-image" src="" alt="Imagen ampliada">
+      <p id="overlay-caption" class="overlay-caption"></p>
+  </div>
 </body>
 </html>
