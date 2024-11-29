@@ -18,8 +18,9 @@ function navigateTo(section) {
         frasesCelebresSection.style.display = 'block';
     } else if (section === 'Merchandising') {
         document.getElementById('merchandising').style.display = 'block';
-    } else if (section === 'Entradas') {
+    } else if (section === 'Redes Sociales') {
         // Aquí agregarías otra sección
+        document.getElementById('redes-sociales').style.display = 'block';
     }
 
     // Cerrar el menú
@@ -101,4 +102,9 @@ function closeMerchOverlay() {
 function closeMerchandising() {
     const merchandisingSection = document.getElementById('merchandising');
     merchandisingSection.style.display = 'none';
+}
+
+//Redes sociales
+function closeRedesSociales() {
+    document.getElementById('redes-sociales').style.display = 'none';
 }
