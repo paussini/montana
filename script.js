@@ -16,7 +16,8 @@ particlesJS.load('fireworks', 'assets/particles.json', function () {
     if (section === 'Frases Célebres') {
       const frasesCelebres = document.getElementById('frases-celebres');
       frasesCelebres.style.display = 'block'; // Muestra "Frases Célebres"
-    } else if (section === 'Galería de imágenes') {
+    } else if (section === 'Merchandising') {
+        document.getElementById('merchandising').style.display = 'block';
       // Aquí agregarías otra sección
     } else if (section === 'Entradas') {
       // Aquí agregarías otra sección
@@ -30,9 +31,9 @@ particlesJS.load('fireworks', 'assets/particles.json', function () {
   
 // Función para mostrar la imagen ampliada con la frase célebre
 function showOverlay(imageSrc, captionText) {
-    const overlay = document.getElementById('overlay');
-    const overlayImage = document.getElementById('overlay-image');
-    const overlayCaption = document.getElementById('overlay-caption');
+    const overlay = document.getElementById('frases-overlay');
+    const overlayImage = document.getElementById('frases-overlay-image');
+    const overlayCaption = document.getElementById('frases-overlay-caption');
 
     // Configura la imagen y la frase
     overlayImage.src = imageSrc;
@@ -44,7 +45,7 @@ function showOverlay(imageSrc, captionText) {
 
 // Función para cerrar el overlay
 function closeOverlay() {
-    const overlay = document.getElementById('overlay');
+    const overlay = document.getElementById('frases-overlay');
     overlay.style.display = 'none';
 }
 
@@ -69,4 +70,19 @@ function closeFrasesCelebres() {
     }
 }
 
+function closeMerchandising() {
+    document.getElementById('merchandising').style.display = 'none';
+}
+
+function showMerchDetails(imageSrc, name, price) {
+    const overlay = document.getElementById('merch-overlay');
+    document.getElementById('merch-overlay-image').src = imageSrc;
+    document.getElementById('merch-overlay-name').textContent = name;
+    document.getElementById('merch-overlay-price').textContent = price;
+    overlay.style.display = 'flex';
+}
+
+function closeMerchOverlay() {
+    document.getElementById('merch-overlay').style.display = 'none';
+}
 

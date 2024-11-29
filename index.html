@@ -30,7 +30,6 @@
             <button class="close-btn" onclick="toggleMenu()">X</button>
             <ul>
                 <li onclick="navigateTo('Frases Célebres')">Frases Célebres</li>
-                <li onclick="navigateTo('Galería de imágenes')">Galería de Imágenes</li>
                 <li onclick="navigateTo('Entradas')">Entradas</li>
                 <li onclick="navigateTo('Merchandising')">Merchandising</li>
                 <li onclick="navigateTo('Redes Sociales')">Redes Sociales</li>
@@ -66,15 +65,58 @@
               </div>
           </div>
       </section>
-      
+      <div id="frases-overlay" class="overlay" style="display: none;">
+        <button class="close-overlay" onclick="closeOverlay()">X</button>
+        <img id="frases-overlay-image" src="" alt="Imagen ampliada">
+        <p id="frases-overlay-caption" class="overlay-caption"></p>
+      </div>
+
+      <section id="merchandising" style="display: none;">
+        <button class="close-section" onclick="closeMerchandising()">X</button>
+        <h2>Merchandising</h2>
+        <div class="merch-grid">
+          <div class="merch-item" onclick="showMerchDetails('assets/bolso.jpg', 'Bolso Montana', '€20.00')">
+              <img src="assets/bolso.jpg" alt="Bolso Montana">
+              <p class="name">Bolso Montana</p>
+              <p class="price">€20.00</p>
+          </div>
+          <div class="merch-item" onclick="showMerchDetails('assets/camion.jpg', 'Camión Montana', '€500000.00')">
+              <img src="assets/camion.jpg" alt="Camión Montana">
+              <p class="name">Camión Montana</p>
+              <p class="price">€500000.00</p>
+          </div>
+          <div class="merch-item" onclick="showMerchDetails('assets/camiseta.jpg', 'Camiseta Montana', '€25.00')">
+              <img src="assets/camiseta.jpg" alt="Camiseta Montana">
+              <p class="name">Camiseta Montana</p>
+              <p class="price">€25.00</p>
+          </div>
+          <div class="merch-item" onclick="showMerchDetails('assets/socks.jpg', 'Calcetines Montana', '€15.00')">
+              <img src="assets/socks.jpg" alt="Calcetines Montana">
+              <p class="name">Calcetines Montanna</p>
+              <p class="price">€15.00</p>
+          </div>
+          <div class="merch-item" onclick="showMerchDetails('assets/sudadera.jpg', 'Sudadera Montana', '€45.00')">
+              <img src="assets/sudadera.jpg" alt="Sudadera Montana">
+              <p class="name">Sudadera Montana</p>
+              <p class="price">€45.00</p>
+          </div>
+          <div class="merch-item" onclick="showMerchDetails('assets/vaso.jpg', 'Vaso Montana', '€8.00')">
+              <img src="assets/vaso.jpg" alt="Vaso Montana">
+              <p class="name">Vaso Montana</p>
+              <p class="price">€8.00</p>
+          </div>
+      </div>
+    </section>
+
+      <div id="merch-overlay" class="merch-overlay" style="display: none;">
+        <button class="close-overlay" onclick="closeMerchOverlay()">X</button>
+        <img id="merch-overlay-image" src="" alt="Imagen del producto">
+        <h3 id="merch-overlay-name"></h3>
+        <p id="merch-overlay-price" class="price"></p>
+      </div>
     </main>
 
     <script src="assets/particles.min.js"></script>
     <script src="script.js"></script>
-    <div id="overlay" class="overlay" style="display: none;">
-      <button class="close-overlay" onclick="closeOverlay()">X</button>
-      <img id="overlay-image" src="" alt="Imagen ampliada">
-      <p id="overlay-caption" class="overlay-caption"></p>
-  </div>
-</body>
+  </body>
 </html>
