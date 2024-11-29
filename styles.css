@@ -448,45 +448,48 @@ body, html {
 
 /* Merchandising Section */
 #merchandising {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    min-height: 100vh;
+    display: none; /* Oculto inicialmente */
+    position: fixed; /* Asegura que ocupe toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background: #000; /* Fondo negro */
+    color: white; /* Texto blanco */
+    overflow-y: auto; /* Permite scroll vertical si es necesario */
+    padding: 20px; /* Margen interno */
+    z-index: 100; /* Coloca la sección encima del resto */
+    box-sizing: border-box; /* Incluye padding en el cálculo de ancho y alto */
 }
 .merch-grid {
     display: flex;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-    gap: 20px; /* Espacio entre los productos */
-    max-height: 80vh; /* Limita la altura del contenedor al 80% de la pantalla */
-    overflow-y: auto; /* Habilita el scroll vertical */
-    padding: 20px; /* Espaciado interno */
-    background: #fff; /* Fondo blanco para destacar los productos */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para realce */
+    flex-wrap: wrap; /* Permite que los productos se ajusten automáticamente */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio entre productos */
+    max-width: 1200px; /* Limita el ancho máximo del grid */
+    margin: 0 auto; /* Centra el grid en la pantalla */
+    padding: 20px; /* Margen interno */
 }
 
 .merch-item {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Coloca la imagen y texto en columna */
+    align-items: center; /* Centra el contenido */
+    background: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para realce */
+    padding: 15px; /* Espaciado interno */
     text-align: center;
-    padding: 10px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 150px; /* Ancho fijo del producto */
+    height: auto; /* Ajusta la altura automáticamente */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .merch-item img {
-    width: 100%;
-    max-width: 150px;
+    max-width: 100%;
     height: auto;
-    margin-bottom: 10px;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .merch-item .name {
@@ -502,8 +505,8 @@ body, html {
 }
 
 .merch-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* Botón de cierre */
@@ -580,9 +583,15 @@ body, html {
     .galeria img {
         max-width: 150px;
     }
+
+    #merchandising {
+        padding: 10px; /* Reduce el margen interno en pantallas pequeñas */
+    }
+
     .merch-grid {
         max-height: 70vh; /* Ajusta la altura máxima en pantallas pequeñas */
         padding: 10px;
+        gap: 10px; /* Reduce el espacio entre productos */
     }
 
     .merch-item img {
@@ -590,11 +599,17 @@ body, html {
     }
 
     .merch-item {
+        width: 120px; /* Reduce el tamaño de los productos */
         padding: 5px;
     }
 }
 
 @media (max-width: 480px) {
+
+    .merch-item {
+        width: 100px; /* Productos más pequeños para móviles */
+    }
+
     .merch-grid {
         max-height: 60vh; /* Altura más pequeña para móviles */
     }
