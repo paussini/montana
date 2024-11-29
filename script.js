@@ -1,64 +1,65 @@
 // Fuegos artificiales
 particlesJS.load('fireworks', 'assets/particles.json', function () {
     console.log('Fuegos artificiales cargados correctamente');
-  });
-  
-  function toggleMenu() {
+});
+
+function toggleMenu() {
     const menu = document.querySelector('.menu');
     menu.classList.toggle('open');
-  }
-  
-  function navigateTo(section) {
+}
+
+function navigateTo(section) {
     // Ocultar todas las secciones primero
     document.querySelectorAll('section').forEach((sec) => (sec.style.display = 'none'));
-  
+
     // Mostrar la sección seleccionada
     if (section === 'Frases Célebres') {
-      const frasesCelebres = document.getElementById('frases-celebres');
-      frasesCelebres.style.display = 'block'; // Muestra "Frases Célebres"
+        const frasesCelebresSection = document.getElementById('frases-celebres');
+        frasesCelebresSection.style.display = 'block';
     } else if (section === 'Merchandising') {
         document.getElementById('merchandising').style.display = 'block';
-      // Aquí agregarías otra sección
     } else if (section === 'Entradas') {
-      // Aquí agregarías otra sección
+        // Aquí agregarías otra sección
     }
-  
+
     // Cerrar el menú
     toggleMenu();
-  }
+}
 
-//   //FRASES
-  
-// Función para mostrar la imagen ampliada con la frase célebre
-function showOverlay(imageSrc, captionText) {
+// -------------------------
+// Funciones para Frases Célebres
+// -------------------------
+
+// Función para mostrar el overlay con la imagen y la frase célebre
+function showFrasesOverlay(imageSrc, fraseText) {
     const overlay = document.getElementById('frases-overlay');
     const overlayImage = document.getElementById('frases-overlay-image');
     const overlayCaption = document.getElementById('frases-overlay-caption');
 
-    // Configura la imagen y la frase
+    // Configura la imagen y el texto
     overlayImage.src = imageSrc;
-    overlayCaption.textContent = captionText;
+    overlayCaption.textContent = fraseText;
 
     // Muestra el overlay
     overlay.style.display = 'flex';
 }
 
-// Función para cerrar el overlay
-function closeOverlay() {
+// Función para cerrar el overlay de Frases Célebres
+function closeFrasesOverlay() {
     const overlay = document.getElementById('frases-overlay');
     overlay.style.display = 'none';
 }
 
-// Añade eventos a las imágenes de la galería
-const galleryItems = document.querySelectorAll('.gallery-item img');
-galleryItems.forEach((img) => {
+// Añade eventos a las imágenes de la galería en Frases Célebres
+const frasesGalleryItems = document.querySelectorAll('.gallery-item img');
+frasesGalleryItems.forEach((img) => {
     const fraseText = img.parentElement.getAttribute('data-frase');
     img.addEventListener('click', () => {
-        showOverlay(img.src, fraseText);
+        showFrasesOverlay(img.src, fraseText);
     });
 });
 
-
+// Función para cerrar la sección completa de Frases Célebres
 function closeFrasesCelebres() {
     const frasesCelebresSection = document.getElementById('frases-celebres');
     frasesCelebresSection.style.display = 'none';
@@ -70,19 +71,34 @@ function closeFrasesCelebres() {
     }
 }
 
-function closeMerchandising() {
-    document.getElementById('merchandising').style.display = 'none';
-}
+// -------------------------
+// Funciones para Merchandising
+// -------------------------
 
+// Función para mostrar el overlay con detalles de Merchandising
 function showMerchDetails(imageSrc, name, price) {
     const overlay = document.getElementById('merch-overlay');
-    document.getElementById('merch-overlay-image').src = imageSrc;
-    document.getElementById('merch-overlay-name').textContent = name;
-    document.getElementById('merch-overlay-price').textContent = price;
+    const overlayImage = document.getElementById('merch-overlay-image');
+    const overlayName = document.getElementById('merch-overlay-name');
+    const overlayPrice = document.getElementById('merch-overlay-price');
+
+    // Configura los detalles del producto
+    overlayImage.src = imageSrc;
+    overlayName.textContent = name;
+    overlayPrice.textContent = price;
+
+    // Muestra el overlay
     overlay.style.display = 'flex';
 }
 
+// Función para cerrar el overlay de Merchandising
 function closeMerchOverlay() {
-    document.getElementById('merch-overlay').style.display = 'none';
+    const overlay = document.getElementById('merch-overlay');
+    overlay.style.display = 'none';
 }
 
+// Función para cerrar la sección completa de Merchandising
+function closeMerchandising() {
+    const merchandisingSection = document.getElementById('merchandising');
+    merchandisingSection.style.display = 'none';
+}

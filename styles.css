@@ -257,24 +257,25 @@ body, html {
   
   /* Estilo para la sección de Frases Célebres */
   #frases-celebres {
-    display: none; /* Oculta inicialmente */
-    position: fixed; /* Fija la sección para que ocupe toda la pantalla */
+    display: none; /* Oculto inicialmente */
+    position: fixed; /* Para ocupar toda la pantalla */
     top: 0;
     left: 0;
-    width: 100%; /* Ocupa todo el ancho */
-    height: 100%; /* Ocupa toda la altura */
-    padding: 50px 20px;
-    background: linear-gradient(to bottom, #222, #111); /* Fondo degradado */
-    color: white;
-    text-align: center;
-    z-index: 100; /* Asegura que esté sobre el resto del contenido */
-    overflow-y: auto; /* Permite desplazamiento si es necesario */
-  }
+    width: 100vw; /* Ancho completo del viewport */
+    height: 100vh; /* Altura completa del viewport */
+    background: #000; /* Fondo negro */
+    color: white; /* Texto blanco */
+    overflow-y: auto; /* Habilita scroll si es necesario */
+    padding: 20px; /* Espaciado interno */
+    z-index: 100; /* Por encima del contenido principal */
+    box-sizing: border-box; /* Incluye padding en el cálculo de ancho y alto */
+}
   
   #frases-celebres h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #ffffff;
+    text-align: center; /* Centra el título */
+    font-size: 2.5rem; /* Tamaño grande del texto */
+    color: #fff;
+    margin-bottom: 20px;
   }
 
   #frases-celebres .close-btn {
@@ -338,9 +339,40 @@ body, html {
 
 .galeria{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espaciado entre imágenes */
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    text-align: center;
+    width: 150px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.gallery-item .frase {
+    font-size: 1rem;
+    color: black;
+    margin-top: 10px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
 .galeria img{
@@ -355,37 +387,39 @@ body, html {
     transform: scale(1.1);
 }
 
-.overlay {
+.overlay-frase {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: none; /* Oculto por defecto */
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     z-index: 200;
+    display: none; /* Oculto por defecto */
+    color: white;
+    text-align: center;
 }
 
 /* Imagen ampliada */
-.overlay img {
+/* Imagen ampliada */
+.overlay-frase img {
     max-width: 90%;
     max-height: 70%;
-    margin-bottom: 20px;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 /* Texto de la frase célebre */
-.overlay-caption {
+.overlay-frase .frase-texto {
     font-size: 1.5rem;
-    color: white;
-    text-align: center;
-    padding: 0 20px;
+    margin-top: 10px;
 }
 
 /* Botón de cierre */
-.close-overlay {
+.overlay-frase .close-frase {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -396,20 +430,19 @@ body, html {
     cursor: pointer;
 }
 
-.close-overlay:hover {
-    color: #ff4081;
+.overlay-frase .close-frase:hover {
+    color: #ff4081; /* Cambia de color al pasar el ratón */
 }
 
 #frases-celebres .close-section {
     position: absolute;
-    top: 40px; /* Ajusta la posición superior del botón */
-    right: 50px; /* Ajusta la posición derecha del botón */
+    top: 20px; /* Ajusta la posición superior del botón */
+    right: 20px; /* Ajusta la posición derecha del botón */
     background: none;
     border: none;
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    z-index: 10;
 }
 
 #frases-celebres .close-section:hover {
@@ -584,6 +617,10 @@ body, html {
         max-width: 150px;
     }
 
+    .gallery-item {
+        width: 120px;
+    }
+
     #merchandising {
         padding: 10px; /* Reduce el margen interno en pantallas pequeñas */
     }
@@ -605,6 +642,10 @@ body, html {
 }
 
 @media (max-width: 480px) {
+
+    .gallery-item {
+        width: 100px;
+    }
 
     .merch-item {
         width: 100px; /* Productos más pequeños para móviles */
@@ -630,10 +671,4 @@ body, html {
         width: 150px;
     }
     
-}
-
-
-
-
-  
-  
+} 
