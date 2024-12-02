@@ -31,7 +31,7 @@
             <ul>
                 <li onclick="navigateTo('Frases Célebres')">Frases Célebres</li>
                 <li onclick="navigateTo('Merchandising')">Merchandising</li>
-                <li onclick="navigateTo('Entradas')">Entradas</li>
+                <li onclick="navigateTo('Montana Tour')">Montana Tour</li>
                 <li onclick="navigateTo('Redes Sociales')">Redes Sociales</li>
             </ul>
         </div>
@@ -41,7 +41,7 @@
         <!-- Sección de Frases Célebres -->
         <section id="frases-celebres" style="display: none;">
           <button class="close-section" onclick="closeFrasesCelebres()">X</button>
-          <h2>Frases Célebres</h2>
+          <h2></h2>
           <div class="galeria">
               <div class="gallery-item" data-frase="'No sigo a musulmanes' - Para Vanity Fair">
                   <img src="assets/foto1.jpg" alt="Frase 1">
@@ -112,7 +112,7 @@
         </div>
           <section id="redes-sociales" style="display: none;">
             <button class="close-section" onclick="closeRedesSociales()">X</button>
-            <h2>Redes Sociales</h2>
+            <h2></h2>
             <div class="social-card">
                 <img src="assets/instagram.jpg" alt="Perfil de Instagram" class="social-card-image">
                 <div class="social-card-content">
@@ -123,7 +123,49 @@
                 </div>
             </div>
         </section>
-      
+
+        <section id="montana-tour" style="display: none;">
+          <button class="close-section" onclick="closeMontanaTour()">X</button>
+          <h2>Montana Tour</h2>
+          <div class="tour-grid">
+            <!-- Wizink Center -->
+            <div class="tour-card">
+              <img src="assets/wizink.jpg" alt="Wizink Center" class="tour-card-image">
+              <div class="tour-card-content">
+                <h3 class="tour-card-title">Wizink Center (Madrid)</h3>
+                <p class="tour-card-date">Fechas: 3-4 de Mayo</p>
+                <p class="tour-card-address">Dirección: Av Felipe II, S/N, 28009, Madrid</p>
+                <a href="https://maps.app.goo.gl/H7PbwJ6UfS49ca9z5?g_st=com.google.maps.preview.copy" target="_blank" class="tour-card-link">
+                  Ver en Google Maps
+                </a>
+              </div>
+            </div>
+            <!-- Palau Sant Jordi -->
+            <div class="tour-card">
+              <img src="assets/palau.jpg" alt="Palau Sant Jordi" class="tour-card-image">
+              <div class="tour-card-content">
+                <h3 class="tour-card-title">Palau Sant Jordi (Barcelona)</h3>
+                <p class="tour-card-date">Fechas: 24-25 de Mayo</p>
+                <p class="tour-card-address">Dirección: Paseo Olímpico, 5-7, 08038, Barcelona</p>
+                <a href="https://maps.app.goo.gl/AdvJAXMcPDrDX1PJ6?g_st=com.google.maps.preview.copy" target="_blank" class="tour-card-link">
+                  Ver en Google Maps
+                </a>
+              </div>
+            </div>
+            <!-- Urbis -->
+            <div class="tour-card">
+              <img src="assets/urbis.jpg" alt="Urbis" class="tour-card-image">
+              <div class="tour-card-content">
+                <h3 class="tour-card-title">Urbis (Moratalaz, Madrid)</h3>
+                <p class="tour-card-date">Fechas: 7-8 de Junio</p>
+                <p class="tour-card-address">Dirección: C/ Doctor García Tapia, 117, 28030, Madrid</p>
+                <a href="https://maps.app.goo.gl/qLLnHSsUqbsvVTap7?g_st=com.google.maps.preview.copy" target="_blank" class="tour-card-link">
+                  Ver en Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
     <script src="assets/particles.min.js"></script>

@@ -21,6 +21,10 @@ function navigateTo(section) {
     } else if (section === 'Redes Sociales') {
         // Aquí agregarías otra sección
         document.getElementById('redes-sociales').style.display = 'block';
+    } else if (section == 'Montana Tour'){
+
+        document.getElementById('montana-tour').style.display = 'block';
+
     }
 
     // Cerrar el menú
@@ -108,3 +112,8 @@ function closeMerchandising() {
 function closeRedesSociales() {
     document.getElementById('redes-sociales').style.display = 'none';
 }
+
+//Montana Tour
+function closeMontanaTour() {
+    document.getElementById('montana-tour').style.display = 'none';
+  }
